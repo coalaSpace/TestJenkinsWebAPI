@@ -33,7 +33,6 @@ namespace Achei.Client.Services.Test {
             ClientEntity client = new ClientEntity() { Email = expectedValue };
             ClientViewModel clientViewModel = Mapper.Map<ClientViewModel>(client);
             actualValue = clientViewModel.Email;
-            actualValue = "";
 
             Assert.Equal(expectedValue, actualValue);
         }
