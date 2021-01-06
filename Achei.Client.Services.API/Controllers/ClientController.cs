@@ -52,7 +52,7 @@ namespace Achei.Client.Services.API.Controllers
         }
 
         [HttpGet]
-        [Route("Get/Address/{AddressID}")]
+        [Route("Get/Address/{AddressID}")] 
         public async Task<ActionResult<ClientViewModel>> GetAddress(int AddressID)
         {
             string cachekeyName = string.Format("GetAddress{0}", AddressID);
