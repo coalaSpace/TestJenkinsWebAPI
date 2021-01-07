@@ -10,7 +10,7 @@ pipeline {
         ROLLBACK = false
 
         //Diretório do Jenkins onde serão salvos os arquivos baixados do Repositório.
-        DIRECTORY_WORKSPACE =  'C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\CoalaSpace-Test-Jenkins-WebAPI'
+        DIRECTORY_WORKSPACE =  'C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\01-Pipeline-JENKINSFILE-FROM-SCM-CoalaSpace-Test-Jenkins-WebAPI\\'
 
         //Diretório onde são salvo os Backups da Aplicação que está no Servidor IIS.
         DIRECTORY_OF_BACKUP_APP_IIS_SERVER = 'D:\\Backups_Jenkins\\APIs\\Client\\'
@@ -19,7 +19,7 @@ pipeline {
         DIRECTORY_APP_IIS_SERVER = 'D:\\web\\api\\Client\\'
 
         //Caminho completo do projeto que será publicado no Servidor IIS.
-        PUBLISH_PROJECT = 'C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\CoalaSpace-Test-Jenkins-WebAPI\\Achei.Client.Services.API\\Achei.Client.Services.API.csproj'
+        PUBLISH_PROJECT = 'C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\01-Pipeline-JENKINSFILE-FROM-SCM-CoalaSpace-Test-Jenkins-WebAPI\\Achei.Client.Services.API\\Achei.Client.Services.API.csproj'
 
         //Coleção exportada do Postman, será executada pelo Newman CLI para realizar o Teste de Integração.
         TEST_POSTMAN_COLLECTION = 'C:\\TestIntegrationPostmanJenkins\\Test_Client_LocalHost.postman_collection.json'
