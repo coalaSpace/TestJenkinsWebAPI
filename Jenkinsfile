@@ -2,34 +2,15 @@ pipeline {
 	agent any	
 	
 	environment {
-
-        //Caminho Completo da pasta onde os Backups serão salvos.
-        BKP_FOLDER_DESTINATION = '' // Deixar vazia, esta variável será criado pelo jenkinsfile
-
-        //Caso ocorre algum erro no Teste de Integração a variável 'ROLLBACK' recebera o valor 'True' e o Rollback será realizado
+        BKP_FOLDER_DESTINATION = ''
         ROLLBACK = false
-
-        //Diretório do Jenkins onde serão salvos os arquivos baixados do Repositório.
         DIRECTORY_WORKSPACE =  'C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\CoalaSpace-Test-Jenkins-WebAPI'
-
-        //Diretório onde são salvo os Backups da Aplicação que está no Servidor IIS.
         DIRECTORY_OF_BACKUP_APP_IIS_SERVER = 'D:\\Backups_Jenkins\\APIs\\Client\\'
-
-        //Diretório da Aplicação no Servidor IIS.
         DIRECTORY_APP_IIS_SERVER = 'D:\\web\\api\\Client\\'
-
-        //Caminho completo do projeto que será publicado no Servidor IIS.
         PUBLISH_PROJECT = 'C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\CoalaSpace-Test-Jenkins-WebAPI\\Achei.Client.Services.API\\Achei.Client.Services.API.csproj'
-
-        //Coleção exportada do Postman, será executada pelo Newman CLI para realizar o Teste de Integração.
         TEST_POSTMAN_COLLECTION = 'C:\\TestIntegrationPostmanJenkins\\Test_Client_LocalHost.postman_collection.json'
-
-        //Diretório onde serão salvo os Resultados dos Teste do Postman.
         DIRECTORY_RESULT_TEST_POSTMAN = 'C:\\TestIntegrationPostmanJenkins\\newman\\API-Client'
-
-        //Nome do Pool da Aplicação do Servidor IIS.
         IIS_APP_POOL_NAME = 'api-client'
-
     }
 	
 	stages {
@@ -179,6 +160,8 @@ pipeline {
                             $appIIS = $env:dirAppIIS        
                             $folderorigin = $env:FolderOrigin + ”\\*”;
                             $poolName = $env:AppPoolName
+
+                            write-host $folderorigin
 
                             stop-WebAppPool -Name  $poolName; 
                             start-Sleep -s 10; 
