@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iis": {
-      "applicationUrl": "http://localhost/Achei.Client.Services.API",
+      "applicationUrl": "https://local.jenkins.com.br/api/ClientServicesAPI",
       "sslPort": 0
     },
     "iisExpress": {
