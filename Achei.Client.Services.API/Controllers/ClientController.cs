@@ -27,7 +27,7 @@ namespace Achei.Client.Services.API.Controllers
         }
          
         [HttpGet] 
-        [Route("Get/{clientID}")]
+        [Route("Get/{clientID}")]     
         public async Task<ActionResult<ClientViewModel>> Get(int clientID) {
             string cachekeyName = string.Format("Get{0}", clientID);
             ClientViewModel client = new ClientViewModel();
